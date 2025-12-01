@@ -1,0 +1,22 @@
+{
+  "name": "2025",
+  "version": "1.0.0",
+  "description": "Advent of Code solutions",
+  "author": "lwahonen",
+  "type": "module",
+  "license": "CC0",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "logic-solver": "^2.0.1",
+    "punycode": "^2.3.1",
+    "regex": "^5.0.2",
+    "sync-fetch": "^0.5.2"
+  },
+  "overrides": {
+    "whatwg-url": "^14.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "babelify": "^10.0.0"
+  }
+}
