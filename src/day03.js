@@ -1,5 +1,4 @@
-import {fetchInputData, overlappedMatches} from "./libraries.js";
-import {regex} from 'regex';
+import {fetchInputData} from "./libraries.js";
 
 const year = 2025
 const day = 3;

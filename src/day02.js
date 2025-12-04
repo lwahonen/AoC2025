@@ -1,4 +1,4 @@
-import {columns, fetchInputData, overlappedMatches} from "./libraries.js";
+import {fetchInputData} from "./libraries.js";
 
 const year = 2025
 const day = 2;
