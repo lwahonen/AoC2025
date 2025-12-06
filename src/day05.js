@@ -50,13 +50,12 @@ while (true) {
             if(first[0] <= second[0] && first[1] >= second[1]) {
                 pairs.splice(j, 1);
                 added = true;
-                break
+                continue
             }
             //If first range reaches into second range from left, trim first range
             if (first[1] >= second[0] && first[0] <= second[0]) {
                 first[1] = second[0] - 1
                 added = true
-                break
             }
         }
     }
@@ -65,8 +64,6 @@ while (true) {
     }
 }
 for (const pair of pairs) {
-    if(pair[1]<pair[0])
-        continue;
     part2 += (pair[1] - pair[0] + 1)
 }
 
