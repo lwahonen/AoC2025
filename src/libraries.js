@@ -138,3 +138,14 @@ export function overlappedMatches(original, reg) {
     return inbraces;
 }
 
+
+export function findInGrid(haystack, needle) {
+    for (let row = 0; row < haystack.length; row++) {
+        for (let col = 0; col < haystack[row].length; col++) {
+            if (haystack[row][col] == needle) {
+                return {row: row, col: col};
+            }
+        }
+    }
+    return null;
+}
