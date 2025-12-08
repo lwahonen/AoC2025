@@ -35,20 +35,20 @@ export function fetchInputData(year, day) {
 }
 export function solveManyMapping(potentialValues) {
     let allvalues = new Set();
-    for (let [key, value] of potentialValues) {
+    for (let [key, value] of Object.entries(potentialValues)) {
         for (let op of value) {
             allvalues.add(value);
         }
     }
     let terms = [];
-    for (let [key, value] of potentialValues) {
+    for (let [key, value] of Object.entries(potentialValues)) {
         let biglog = `Logic.or(`;
         let bigstack = [];
         for (let op of value) {
             let bool = `${op}=${key}`;
             let log = `Logic.and("${bool}", `;
             let stack = [];
-            for (let forbid of potentialValues.keys()) {
+            for (let forbid of Object.keys(potentialValues)) {
                 if (forbid != key) {
                     stack.push(`Logic.not("${op}=${forbid}")`);
                 }
@@ -65,7 +65,13 @@ export function solveManyMapping(potentialValues) {
         eval(str);
     }
     var sol1 = solver.solve();
-    return sol1.getTrueVars();
+    let pairs = sol1.getTrueVars();
+    let ret = {}
+    for (const pair of pairs) {
+        let s = pair.split("=")
+        ret[s[1]] = s[0]
+    }
+    return ret
 }
 export function keyCount(myobj) {
     var count = 0;
